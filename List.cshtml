@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<SMTI_SGHE.Models.Entity.Student>
+
+<h1>All Patient</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PatientName</th>
+            <th>MobileNumber</th>
+            <th>Patient Email</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.fName</td>
+                <td>@student.lName</td>
+                <td>@student.Email</td>
+                <td>@student.DOB</td>
+                <td>@student.Address</td>
+                <td>
+                    <a asp-controller="Projects" asp-action="List" asp-route-id="@student.Id" class="btn btn-primary">Department</a>
+                    
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tr>
+        
+
+    </tr>
+</table>
